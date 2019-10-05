@@ -32,6 +32,7 @@ namespace Services.Seisicite.Api.Controllers
       return await ResponseOkAsync(value);
     }
 
+    [AllowAnonymous]
     [HttpGet("modalities")]
     public async Task<IActionResult> GetModalities()
     {
@@ -39,6 +40,8 @@ namespace Services.Seisicite.Api.Controllers
 
       return await ResponseOkAsync(value);
     }
+
+    [AllowAnonymous]
     [HttpGet("instituions")]
     public async Task<IActionResult> GetInstitutions()
     {
@@ -84,10 +87,24 @@ namespace Services.Seisicite.Api.Controllers
       return await ResponseOkAsync(newList);
     }
 
-    [HttpPut("evaluate/{id}")]
-    public async Task<IActionResult> SortArticles([FromBody] EvaluateArticleCommand command, [FromRoute] string id)
+    [HttpPut("{id}/evaluate")]
+    public async Task<IActionResult> EvaluateArticle([FromBody] EvaluateArticleCommand command, [FromRoute] string id)
     {
       var value = await _mediator.Send(command.SetId(id));
+
+      if (!value)
+        return await ResponseNotificationsAsync();
+
+      return await ResponseOkAsync();
+    }
+
+    [HttpGet("{id}/can-evaluate")]
+    public async Task<IActionResult> CanEvaluate([FromQuery] string evaluatorId, [FromRoute] string id)
+    {
+      var value = await _mediator.Send(new CanEvaluateArticleQuery() {
+        EvaluatorId = evaluatorId,
+        Id = id
+      });
 
       if (!value)
         return await ResponseNotificationsAsync();

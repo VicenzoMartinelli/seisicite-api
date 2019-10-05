@@ -988,7 +988,8 @@
       },
       "Domain.Core/1.0.0": {
         "dependencies": {
-          "MediatR": "7.0.0"
+          "MediatR": "7.0.0",
+          "Newtonsoft.Json": "12.0.2"
         },
         "runtime": {
           "Domain.Core.dll": {}

@@ -1,20 +1,23 @@
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
-WORKDIR /src
-COPY ["Services.Seisicite.Api/Services.Seisicite.Api.csproj", "Services.Seisicite.Api/"]
-RUN dotnet restore "Services.Seisicite.Api/Services.Seisicite.Api.csproj"
-COPY . .
-WORKDIR "/src/Services.Seisicite.Api"
-RUN dotnet build "Services.Seisicite.Api.csproj" -c Release -o /app
+RUN mkdir /output
 
-FROM build AS publish
-RUN dotnet publish "Services.Seisicite.Api.csproj" -c Release -o /app
+# Copy project and publish
 
-FROM base AS final
+COPY . /app
+
+WORKDIR /app/Seisicite.Api
+RUN dotnet publish --configuration Debug --output /output
+
+# Build runtime image
+FROM microsoft/dotnet:aspnetcore-runtime
+
+ENV ASPNETCORE_URLS http://*:5001
+
 WORKDIR /app
-COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "Services.Seisicite.Api.dll"]
+
+COPY --from=build-env /output .
+EXPOSE 5001
+
+ENTRYPOINT ["dotnet", "Seisicite.Api.dll"]

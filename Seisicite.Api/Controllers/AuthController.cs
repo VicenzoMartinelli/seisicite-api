@@ -16,7 +16,7 @@ namespace Services.Seisicite.Api.Controllers
     }
 
     [HttpGet]
-    public Task<IActionResult> Get()
+    public Task<IActionResult> Get()  
       => Task.FromResult((IActionResult) Ok("nidasduiasdhiasudhas"));
 
     [HttpPost("register-comission-user")]

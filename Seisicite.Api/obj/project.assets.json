@@ -5127,7 +5127,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "MediatR": "7.0.0"
+          "MediatR": "7.0.0",
+          "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
           "bin/placeholder/Domain.Core.dll": {}
@@ -14096,11 +14097,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Seisicite.Api\\Seisicite.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Seisicite.Api\\Seisicite.Api.csproj",
       "projectName": "Seisicite.Api",
-      "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Seisicite.Api\\Seisicite.Api.csproj",
+      "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Seisicite.Api\\Seisicite.Api.csproj",
       "packagesPath": "C:\\Users\\Vicenzo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Seisicite.Api\\obj\\",
+      "outputPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Seisicite.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -14119,23 +14120,23 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Application.Api\\Application.Api.csproj": {
-              "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Application.Api\\Application.Api.csproj"
+            "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj": {
+              "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj"
             },
-            "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Domain.Core\\Domain.Core.csproj": {
-              "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Domain.Core\\Domain.Core.csproj"
+            "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj": {
+              "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj"
             },
-            "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Domain\\Domain.csproj"
+            "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj": {
-              "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj"
+            "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj": {
+              "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj"
             },
-            "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj": {
-              "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj"
+            "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj": {
+              "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj"
             },
-            "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj": {
-              "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\seisicite-api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj"
+            "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj": {
+              "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj"
             }
           }
         }

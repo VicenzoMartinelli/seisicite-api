@@ -1,0 +1,24 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/.vscode
+/Application.Api/bin
+/Application.Api/obj
+/Domain/bin
+/Domain/obj
+/Infra.CrossCuting.AutoMapper/bin
+/Infra.CrossCuting.AutoMapper/obj
+/Infra.CrossCuting.IoC/bin
+/Infra.CrossCuting.IoC/obj
+/Infra.CrossCuting.Shared/bin
+/Infra.CrossCuting.Shared/obj
+/Infra.Data/bin
+/Infra.Data/obj
+/Infra.Data.MongoIdentityStore/bin
+/Infra.Data.MongoIdentityStore/obj
+/Infra.Auth/bin/Debug/netcoreapp2.2
+/Infra.Auth/obj
+/Domain.Core/bin
+/Domain.Core/obj
