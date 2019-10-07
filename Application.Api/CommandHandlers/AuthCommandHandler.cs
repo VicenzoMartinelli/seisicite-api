@@ -1,4 +1,6 @@
-﻿using Application.Api.ViewModels;
+﻿using Application.Api.Commands;
+using Application.Api.Services;
+using Application.Api.ViewModels;
 using Domain.Core.Enumerators;
 using Domain.Core.Notifications;
 using Domain.Domains.Article;
@@ -10,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Services.Seisicite.Api.Commands;
 using System;
+using System.Diagnostics;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -22,26 +25,30 @@ namespace Services.Seisicite.Api.CommandHandlers
   public class AuthCommandHandler : 
       IRequestHandler<RegisterUserCommand, Token>, 
       IRequestHandler<RegisterUserEvaluatorCommand, Token>, 
-      IRequestHandler<LoginCommand, Token>
+      IRequestHandler<LoginCommand, Token>,
+      IRequestHandler<ResetPasswordCommand, bool>
   {
     private readonly SignInManager<MongoIdentityUser> _signInManager;
     private readonly UserManager<MongoIdentityUser> _userManager;
     private readonly NotificationContext _notificationContext;
     private readonly SecuritySettings _secSettings;
     private readonly IRepository _repository;
+    private readonly EmailSender _emailSender;
 
     public AuthCommandHandler(
       SignInManager<MongoIdentityUser> signInManager,
       UserManager<MongoIdentityUser> userManager,
       NotificationContext notificationContext,
       SecuritySettings secSettings,
-      IRepository repository)
+      IRepository repository,
+      EmailSender emailSender)
     {
       _signInManager = signInManager;
       _userManager = userManager;
       _notificationContext = notificationContext;
       _secSettings = secSettings;
       _repository = repository;
+      _emailSender = emailSender;
     }
 
     public async Task<Token> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
@@ -160,6 +167,58 @@ namespace Services.Seisicite.Api.CommandHandlers
       return tokenResult;
     }
 
+    public async Task<bool> Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
+    {
+      var identityUser = await _userManager.FindByEmailAsync(request.Email);
+
+      if (identityUser == null)
+      {
+        return false;
+      }
+
+      var newPass = new PassowordGenerator().Generate();
+
+      var r1 = await _userManager.RemovePasswordAsync(identityUser);
+      var r2 = await _userManager.AddPasswordAsync(identityUser, newPass);
+
+      if (!(r1.Succeeded && r2.Succeeded))
+      {
+        return false;
+      }
+
+      try
+      {
+        await _emailSender.SendEmailAsync("Nova senha", $"Olá, sua nova senha para acesso ao Avaliador SeiSicite é {newPass}", request.Email);
+      }
+      catch (Exception)
+      {
+        try
+        {
+          await _emailSender.SendEmailAsync("Nova senha", $"Olá, sua nova senha para acesso ao Avaliador SeiSicite é {newPass}", request.Email);
+        }
+        catch (Exception)
+        {
+          try
+          {
+            await _emailSender.SendEmailAsync("Nova senha", $"Olá, sua nova senha para acesso ao Avaliador SeiSicite é {newPass}", request.Email);
+          }
+          catch (Exception)
+          {
+            try
+            {
+              await _emailSender.SendEmailAsync("Nova senha", $"Olá, a senha do email {request.Email} foi trocada mas o envio do email nao foi feito, a nova senha para acesso ao Avaliador SeiSicite é {newPass}", "martinellivicenzo@gmail.com");
+            }
+            catch (Exception)
+            {
+            }
+          }
+        }
+
+      }
+
+      return true;
+
+    }
     private async Task<Token> GerarJwt(MongoIdentityUser user)
     {
       var identityClaims = new ClaimsIdentity();

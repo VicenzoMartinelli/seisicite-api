@@ -52,7 +52,7 @@ namespace Application.Api.QueryHandlers
         {
           return 0;
         }
-        else if (time.Hour < 18)
+        else if (time.Hour < 19)
         {
           return 1;
         }

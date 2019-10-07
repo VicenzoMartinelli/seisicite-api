@@ -1,4 +1,5 @@
-﻿using Domain.Core.Notifications;
+﻿using Application.Api.Commands;
+using Domain.Core.Notifications;
 using Infra.Data.MongoIdentityStore;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -58,6 +59,19 @@ namespace Services.Seisicite.Api.Controllers
       if (result == null)
       {
         return await ResponseNotificationsAsync();
+      }
+
+      return await ResponseOkAsync(result);
+    }
+
+    [HttpPost("reset-password/{email}")]
+    public async Task<IActionResult> ResetPassword([FromRoute] string email)
+    {
+      var result = await _mediator.Send(new ResetPasswordCommand().setEmail(email));
+
+      if (!result)
+      {
+        return await ResponseBadRequestAsync();
       }
 
       return await ResponseOkAsync(result);

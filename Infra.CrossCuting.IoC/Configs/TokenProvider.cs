@@ -1,4 +1,5 @@
-﻿using Application.Api.Messages;
+﻿using Application.Api.Commands;
+using Application.Api.Messages;
 using Application.Api.ViewModels;
 using Domain.Domains.Article;
 using Infra.Data.MongoIdentityStore;
@@ -75,6 +76,7 @@ namespace Infra.Ioc.Configs
       services.AddScoped<IRequestHandler<RegisterUserCommand, Token>, AuthCommandHandler>();
       services.AddScoped<IRequestHandler<RegisterUserEvaluatorCommand, Token>, AuthCommandHandler>();
       services.AddScoped<IRequestHandler<LoginCommand, Token>, AuthCommandHandler>();
+      services.AddScoped<IRequestHandler<ResetPasswordCommand, bool>, AuthCommandHandler>();
     }
   }
 }

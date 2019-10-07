@@ -1,4 +1,5 @@
-﻿using Domain.Core.Notifications;
+﻿using Application.Api.Services;
+using Domain.Core.Notifications;
 using Infra.Ioc.Configs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +20,7 @@ namespace Infra.Ioc
       
       services.AddIdentityTokenProvider();
 
+      services.AddSingleton<EmailSender>();
       services.AddScoped<NotificationContext>();
     }
   }
