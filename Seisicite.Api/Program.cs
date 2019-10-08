@@ -10,7 +10,7 @@ namespace Services.Seisicite.Api
     {
       WebHost
         .CreateDefaultBuilder(args)
-        .UsePort()
+        //.UsePort()
         .UseStartup<Startup>()
         .Build()
         .Run();

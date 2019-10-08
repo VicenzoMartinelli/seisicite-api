@@ -8,4 +8,5 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
 WORKDIR /app
 COPY --from=build-env /app/Seisicite.Api/out .
 
-ENTRYPOINT ["dotnet", "Seisicite.Api.dll"]
+#ENTRYPOINT ["dotnet", "Seisicite.Api.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet Seisicite.Api.dll
