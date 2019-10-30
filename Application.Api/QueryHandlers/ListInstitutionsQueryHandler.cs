@@ -1,4 +1,4 @@
-using Application.Api.Queries;
+﻿using Application.Api.Queries;
 using Domain.Interfaces;
 using Domains.Article;
 using MediatR;
@@ -21,8 +21,11 @@ namespace Application.Api.QueryHandlers
     public Task<List<string>> Handle(ListInstitutionsQuery request, CancellationToken cancellationToken)
     {
       var insts = _repository.Query<Article>()
+        .Where(x => x.PrimaryAuthor.Institution != null)
+        .Where(x => x.PrimaryAuthor.Institution != "")
         .Select(x => x.PrimaryAuthor.Institution)
-        .Distinct();
+        .Distinct()
+        .OrderBy(x => x);
 
       return Task.FromResult(insts.ToList());
     }

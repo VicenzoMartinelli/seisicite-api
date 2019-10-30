@@ -1,4 +1,4 @@
-using Application.Api.Queries;
+﻿using Application.Api.Queries;
 using Application.Api.ViewModels;
 using Domain.Interfaces;
 using Domains.Article;
@@ -66,29 +66,30 @@ namespace Application.Api.QueryHandlers
         {
           artReturn.Add(new ArticleViewModel
           {
-            Id                         = art.Id,
-            SubmissionId               = art.SubmissionId,
-            Title                      = art.Title,
-            Resume                     = art.Resume,
-            Building                   = art.Building,
-            Modality                   = art.Modality,
-            Room                       = art.Room,
-            PrimaryAuthor              = art.PrimaryAuthor,
-            StartDate                  = art.StartDate.ToLocalTime(),
-            Type                       = art.ApresentationType,
-            Evaluator2Id               = art.Evaluator2Id,
-            EvaluatorId                = art.EvaluatorId,
-            LocalDetails               = art.LocalDetails,
-            FinalAverage               = av1 ? art.FinalAverage : art.FinalAverage2,
+            Id = art.Id,
+            SubmissionId = art.SubmissionId,
+            Title = art.Title,
+            Resume = art.Resume,
+            Building = art.Building,
+            Modality = art.Modality,
+            Room = art.Room,
+            PrimaryAuthor = art.PrimaryAuthor,
+            SecundaryAuthor = art.SecundaryAuthor,
+            StartDate = art.StartDate.ToLocalTime(),
+            Type = art.ApresentationType,
+            Evaluator2Id = art.Evaluator2Id,
+            EvaluatorId = art.EvaluatorId,
+            LocalDetails = art.LocalDetails,
+            FinalAverage = av1 ? art.FinalAverage : art.FinalAverage2,
             NotaAdequacaoTempoConteudo = av1 ? art.NotaAdequacaoTempoConteudo : art.NotaAdequacaoTempoConteudo2,
-            NotaConhecimentoAssunto    = av1 ? art.NotaConhecimentoAssunto : art.NotaConhecimentoAssunto2,
-            NotaIntroducaoTrabalho     = av1 ? art.NotaIntroducaoTrabalho : art.NotaIntroducaoTrabalho2,
-            NotaMateriaisMetodo        = av1 ? art.NotaMateriaisMetodo : art.NotaMateriaisMetodo2,
-            NotaMotivacao              = av1 ? art.NotaMotivacao : art.NotaMotivacao,
-            NotaObjetivosTrabalho      = av1 ? art.NotaObjetivosTrabalho : art.NotaObjetivosTrabalho2,
-            NotaOrganizacaoClareza     = av1 ? art.NotaOrganizacaoClareza : art.NotaOrganizacaoClareza2,
-            NotaPostura                = av1 ? art.NotaPostura : art.NotaPostura2,
-            NotaSequenciaLogica        = av1 ? art.NotaSequenciaLogica : art.NotaSequenciaLogica2
+            NotaConhecimentoAssunto = av1 ? art.NotaConhecimentoAssunto : art.NotaConhecimentoAssunto2,
+            NotaIntroducaoTrabalho = av1 ? art.NotaIntroducaoTrabalho : art.NotaIntroducaoTrabalho2,
+            NotaMateriaisMetodo = av1 ? art.NotaMateriaisMetodo : art.NotaMateriaisMetodo2,
+            NotaMotivacao = av1 ? art.NotaMotivacao : art.NotaMotivacao,
+            NotaObjetivosTrabalho = av1 ? art.NotaObjetivosTrabalho : art.NotaObjetivosTrabalho2,
+            NotaOrganizacaoClareza = av1 ? art.NotaOrganizacaoClareza : art.NotaOrganizacaoClareza2,
+            NotaPostura = av1 ? art.NotaPostura : art.NotaPostura2,
+            NotaSequenciaLogica = av1 ? art.NotaSequenciaLogica : art.NotaSequenciaLogica2
           });
         }
       }
@@ -98,13 +99,13 @@ namespace Application.Api.QueryHandlers
 
     private int GetTurno(DateTime time)
     {
-      if (time.Hour > 8)
+      if (time.Hour > 11)
       {
-        if (time.Hour < 13)
+        if (time.Hour < 16)
         {
           return 0;
         }
-        else if (time.Hour < 18)
+        else if (time.Hour < 22)
         {
           return 1;
         }

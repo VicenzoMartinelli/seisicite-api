@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Seisicite.Api\\Seisicite.Api.csproj": {}
+    "R:\\Code\\React\\seisicite\\api\\Seisicite.Api\\Seisicite.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj": {
+    "R:\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj",
+        "projectUniqueName": "R:\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj",
         "projectName": "Application.Api",
-        "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj",
+        "projectPath": "R:\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj",
         "packagesPath": "C:\\Users\\Vicenzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Application.Api\\obj\\",
+        "outputPath": "R:\\Code\\React\\seisicite\\api\\Application.Api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Vicenzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -30,20 +27,20 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.Shared\\Infra.CrossCuting.Shared.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.Shared\\Infra.CrossCuting.Shared.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.Shared\\Infra.CrossCuting.Shared.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.Shared\\Infra.CrossCuting.Shared.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj"
               }
             }
           }
@@ -81,25 +78,28 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj": {
+    "R:\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj",
+        "projectUniqueName": "R:\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj",
         "projectName": "Domain.Core",
-        "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj",
+        "projectPath": "R:\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj",
         "packagesPath": "C:\\Users\\Vicenzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain.Core\\obj\\",
+        "outputPath": "R:\\Code\\React\\seisicite\\api\\Domain.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Vicenzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -141,25 +141,28 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj": {
+    "R:\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj",
+        "projectUniqueName": "R:\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj",
+        "projectPath": "R:\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Vicenzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\obj\\",
+        "outputPath": "R:\\Code\\React\\seisicite\\api\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Vicenzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -174,8 +177,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj"
               }
             }
           }
@@ -205,25 +208,28 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj": {
+    "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj",
+        "projectUniqueName": "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj",
         "projectName": "Infra.CrossCuting.AutoMapper",
-        "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj",
+        "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj",
         "packagesPath": "C:\\Users\\Vicenzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\obj\\",
+        "outputPath": "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Vicenzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -238,8 +244,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj"
               }
             }
           }
@@ -265,25 +271,28 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj": {
+    "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj",
+        "projectUniqueName": "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj",
         "projectName": "Infra.CrossCuting.IoC",
-        "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj",
+        "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj",
         "packagesPath": "C:\\Users\\Vicenzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\obj\\",
+        "outputPath": "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Vicenzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -298,20 +307,20 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj"
               }
             }
           }
@@ -357,25 +366,28 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.Shared\\Infra.CrossCuting.Shared.csproj": {
+    "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.Shared\\Infra.CrossCuting.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.Shared\\Infra.CrossCuting.Shared.csproj",
+        "projectUniqueName": "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.Shared\\Infra.CrossCuting.Shared.csproj",
         "projectName": "Infra.CrossCuting.Shared",
-        "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.Shared\\Infra.CrossCuting.Shared.csproj",
+        "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.Shared\\Infra.CrossCuting.Shared.csproj",
         "packagesPath": "C:\\Users\\Vicenzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.Shared\\obj\\",
+        "outputPath": "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Vicenzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -413,25 +425,28 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj": {
+    "R:\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj",
+        "projectUniqueName": "R:\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj",
         "projectName": "Infra.Data.MongoIdentityStore",
-        "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj",
+        "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj",
         "packagesPath": "C:\\Users\\Vicenzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\obj\\",
+        "outputPath": "R:\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Vicenzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -481,25 +496,28 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj": {
+    "R:\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj",
+        "projectUniqueName": "R:\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj",
         "projectName": "Infra.Data",
-        "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj",
+        "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.Data\\Infra.Data.csproj",
         "packagesPath": "C:\\Users\\Vicenzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data\\obj\\",
+        "outputPath": "R:\\Code\\React\\seisicite\\api\\Infra.Data\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Vicenzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -514,8 +532,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj"
               }
             }
           }
@@ -545,25 +563,28 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Seisicite.Api\\Seisicite.Api.csproj": {
+    "R:\\Code\\React\\seisicite\\api\\Seisicite.Api\\Seisicite.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Seisicite.Api\\Seisicite.Api.csproj",
+        "projectUniqueName": "R:\\Code\\React\\seisicite\\api\\Seisicite.Api\\Seisicite.Api.csproj",
         "projectName": "Seisicite.Api",
-        "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Seisicite.Api\\Seisicite.Api.csproj",
+        "projectPath": "R:\\Code\\React\\seisicite\\api\\Seisicite.Api\\Seisicite.Api.csproj",
         "packagesPath": "C:\\Users\\Vicenzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Seisicite.Api\\obj\\",
+        "outputPath": "R:\\Code\\React\\seisicite\\api\\Seisicite.Api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Vicenzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -578,23 +599,23 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Application.Api\\Application.Api.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Domain.Core\\Domain.Core.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.AutoMapper\\Infra.CrossCuting.AutoMapper.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.CrossCuting.IoC\\Infra.CrossCuting.IoC.csproj"
               },
-              "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj": {
-                "projectPath": "C:\\Users\\Vicenzo\\OneDrive\\Documentos\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj"
+              "R:\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj": {
+                "projectPath": "R:\\Code\\React\\seisicite\\api\\Infra.Data.MongoIdentityStore\\Infra.Data.MongoIdentityStore.csproj"
               }
             }
           }
@@ -663,10 +684,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

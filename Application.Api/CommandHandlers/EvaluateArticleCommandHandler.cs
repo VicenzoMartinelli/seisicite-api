@@ -1,11 +1,9 @@
 ﻿using Application.Api.Commands;
 using Domain.Core.Enumerators;
 using Domain.Core.Notifications;
-using Domain.Domains.Article;
 using Domain.Interfaces;
 using Domains.Article;
 using MediatR;
-using Services.Seisicite.Api.Commands;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -84,13 +82,13 @@ namespace Services.Seisicite.Api.CommandHandlers
 
     private int GetTurno(DateTime time)
     {
-      if (time.Hour > 8)
+      if (time.Hour > 11)
       {
-        if (time.Hour < 13)
+        if (time.Hour < 16)
         {
           return 0;
         }
-        else if (time.Hour < 19)
+        else if (time.Hour < 22)
         {
           return 1;
         }

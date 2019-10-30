@@ -1,13 +1,11 @@
-using Application.Api.Commands;
+﻿using Application.Api.Commands;
 using Application.Api.Queries;
-using Application.Api.ViewModels;
 using Domain.Core.Notifications;
 using Domains.Article;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services.Seisicite.Api.Commands;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Services.Seisicite.Api.Controllers
@@ -80,7 +78,8 @@ namespace Services.Seisicite.Api.Controllers
       if (!value)
         return await ResponseNotificationsAsync();
 
-      var newList = await _mediator.Send(new ListArticlesPaginatedByEventQuery {
+      var newList = await _mediator.Send(new ListArticlesPaginatedByEventQuery
+      {
         Event = eventId
       });
 
@@ -101,7 +100,8 @@ namespace Services.Seisicite.Api.Controllers
     [HttpGet("{id}/can-evaluate")]
     public async Task<IActionResult> CanEvaluate([FromQuery] string evaluatorId, [FromRoute] string id)
     {
-      var value = await _mediator.Send(new CanEvaluateArticleQuery() {
+      var value = await _mediator.Send(new CanEvaluateArticleQuery()
+      {
         EvaluatorId = evaluatorId,
         Id = id
       });
@@ -118,7 +118,8 @@ namespace Services.Seisicite.Api.Controllers
       [FromRoute] QueryToEvaluateType type,
       [FromRoute] EEventIdentifier eevent)
     {
-      var value = await _mediator.Send(new ListArticlesToEvaluateQuery() {
+      var value = await _mediator.Send(new ListArticlesToEvaluateQuery()
+      {
         EvaluatorId = evaluatorId,
         Type = type,
         EEvent = eevent
@@ -130,11 +131,14 @@ namespace Services.Seisicite.Api.Controllers
     [HttpGet("articles-report/{eevent}/{modality}")]
     public async Task<IActionResult> ReportArticlesNote(
       [FromRoute] EEventIdentifier eevent,
-      [FromRoute] string modality)
+      [FromRoute] string modality,
+      [FromQuery] EApresentationType? apresentationType)
     {
-      var value = await _mediator.Send(new ReportArticlesNoteQuery() {
+      var value = await _mediator.Send(new ReportArticlesNoteQuery()
+      {
         Modality = modality,
-        Event = eevent
+        Event = eevent,
+        Type = apresentationType
       });
 
       return await ResponseOkAsync(value);

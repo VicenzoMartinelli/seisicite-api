@@ -1,4 +1,4 @@
-using Domains.Article;
+﻿using Domains.Article;
 using System;
 
 namespace Application.Api.ViewModels
@@ -11,6 +11,7 @@ namespace Application.Api.ViewModels
     public string Title { get; set; }
     public string Resume { get; set; }
     public Author PrimaryAuthor { get; set; }
+    public Author SecundaryAuthor { get; set; }
     public DateTime StartDate { get; set; }
     public EApresentationType Type { get; set; }
     public string Building { get; set; }

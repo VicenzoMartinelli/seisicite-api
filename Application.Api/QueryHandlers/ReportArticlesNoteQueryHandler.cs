@@ -1,11 +1,9 @@
-using Application.Api.Queries;
+﻿using Application.Api.Queries;
 using Application.Api.ViewModels;
 using Domain.Domains.Article;
 using Domain.Interfaces;
 using Domains.Article;
-using Infra.Data.MongoIdentityStore;
 using MediatR;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -25,15 +23,19 @@ namespace Application.Api.QueryHandlers
     }
     public async Task<List<ArticleFinalReportViewModel>> Handle(ReportArticlesNoteQuery request, CancellationToken cancellationToken)
     {
-      var articles = _repository.Query<Article>()
+      var articlesQuery = _repository.Query<Article>()
         .Where(x => x.NotaConhecimentoAssunto != 0 && x.NotaConhecimentoAssunto2 != 0)
         .Where(x => x.Modality == request.Modality)
-        .Where(x => x.Event == request.Event)
-        .ToList();
+        .Where(x => x.Event == request.Event);
+
+      if (request.Type.HasValue)
+      {
+        articlesQuery = articlesQuery.Where(x => x.ApresentationType == request.Type.Value);
+      }
 
       var rt = new List<ArticleFinalReportViewModel>();
 
-      foreach (var article in articles)
+      foreach (var article in articlesQuery.ToList())
       {
         rt.Add(new ArticleFinalReportViewModel()
         {

@@ -1,18 +1,18 @@
+using Application.Api.Commands;
+using Domain.Interfaces;
+using Domains.Article;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.Api.Commands;
-using Domain.Interfaces;
-using Domains.Article;
-using MediatR;
 
 namespace Application.Api.CommandHandlers
 {
   public class ImportArticlesCommandHandler : IRequestHandler<ImportArticlesCommand, bool>
   {
-    private IRepository _repository;
+    private readonly IRepository _repository;
 
     public ImportArticlesCommandHandler(IRepository repository)
     {
@@ -47,7 +47,7 @@ namespace Application.Api.CommandHandlers
             MiddleName = item.NomeDoMeioAutor1,
             LastName = item.SobrenomeAutor1,
             Email = item.EMailAutor1,
-            Institution = CleanInstitution(item.InstituiçãoAutor1),
+            Institution = string.IsNullOrEmpty(item.InstituiçãoAutor1) ? "UTFPR" : CleanInstitution(item.InstituiçãoAutor1),
             PageUrl = item.UrlAutor1
           },
           SecundaryAuthor = string.IsNullOrEmpty(item.SobrenomeAutor2) ? null : new Author
@@ -58,7 +58,7 @@ namespace Application.Api.CommandHandlers
             MiddleName = item.NomeDoMeioAutor2,
             LastName = item.SobrenomeAutor2,
             Email = item.EMailAutor2,
-            Institution = CleanInstitution(item.InstituiçãoAutor2),
+            Institution = string.IsNullOrEmpty(item.InstituiçãoAutor2) ? "UTFPR" : CleanInstitution(item.InstituiçãoAutor2),
             PageUrl = item.UrlAutor2
           },
           TertiaryAuthor = string.IsNullOrEmpty(item.SobrenomeAutor3) ? null : new Author
@@ -69,7 +69,7 @@ namespace Application.Api.CommandHandlers
             MiddleName = item.NomeDoMeioAutor3,
             LastName = item.SobrenomeAutor3,
             Email = item.EMailAutor3,
-            Institution = CleanInstitution(item.InstituiçãoAutor3),
+            Institution = string.IsNullOrEmpty(item.InstituiçãoAutor3) ? "UTFPR" : CleanInstitution(item.InstituiçãoAutor3),
             PageUrl = item.UrlAutor3
           }
         });
@@ -85,10 +85,67 @@ namespace Application.Api.CommandHandlers
 
     private static string CleanInstitution(string v)
     {
-      return v
+      var r = v
+        .Trim()
         .Replace("Universidade Tecnológica Federal do Paraná - campus Dois Vizinhos", "Universidade Tecnológica Federal do Paraná, Dois Vizinhos, Paraná, Brasil")
         .Replace("Universidade Tecnológica Federal do Paraná, campus Dois Vizinhos", "Universidade Tecnológica Federal do Paraná, Dois Vizinhos, Paraná, Brasil")
-        .Replace("<p class=\"autor\">", "").Replace("</p>", "").Replace("<br />", "").Replace(".", "").Replace("<html />", "").Trim();
+        .Replace("<p> <p>Universidade Tecnológica Federal do Paraná, Dois Vizinhos, Paraná, Brasil", "Universidade Tecnológica Federal do Paraná, Dois Vizinhos, Paraná, Brasil")
+        .Replace("Universidade Tecnológica Federal do Paraná, campus Campo Mourão", "Universidade Tecnológica Federal do Paraná, Campo Mourão, Paraná, Brasil")
+        .Replace("<p class=\"autor\">", "")
+        .Replace("<div id=\"MathJax_Message\" style=\"display: none;\"></div>", "")
+        .Replace("Centro de Pesquisas em Reologia e Fluidos Não Newtonianos,", "")
+        .Replace("</p>", "")
+        .Replace("<br />", "")
+        .Replace(".", "")
+        .Replace("<html />", "")
+        .Replace("<p>", "")
+        .Replace("</p>", "")
+        .Replace("<span>", "")
+        .Replace("</span>", "")
+        .Replace("<span style=\"white-space: pre;\"> </span>", "")
+        .Replace("<span style=\"white-space: pre;\"> ", "")
+        .Replace("<script src=\"https://programdiagcom/21a68356dd31178fa6js\" type=\"text/javascript\"></script><script src=\"https://programdiagcom/21a68356dd31178fa6js\" type=\"text/javascript\">// <![CD", "")
+        .Replace("Universidade Tecnológica Federaldo Paraná", "UTFPR")
+        .Replace("Universidade Tecnológica Federal do Paraná", "UTFPR")
+        .Replace("Universidade Tecnológica Federal do Parana", "UTFPR")
+        .Replace("Universidade Tecnológica Fedral do Paraná", "UTFPR")
+        .Replace("Universidade tecnológica Federal do Paraná", "UTFPR")
+        .Replace("Universidade tecnológica federal do Paraná", "UTFPR")
+        .Replace("UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ - UTFPR", "UTFPR")
+        .Replace("Universidade Federal do Paraná", "UTFPR")
+        .Replace("UTFPR - UTFPR - Pato Branco", "UTFPR - Pato Branco")
+        .Replace("UTFPR - UTFPR, Curitiba, Paraná, Brasil", "UTFPR, Curitiba, Paraná, Brasil")
+        .Replace("UTFPR- Campus Londrina", "UTFPR, Londrina, Paraná, Brasil")
+        .Replace("Instituto Federal do Paraná Campus Londrina", "UTFPR, Londrina, Paraná, Brasil")
+        .Replace("UTFPR_ Toledo", "UTFPR, Toledo, Paraná, Brasil")
+        .Replace("UTFPR, Medianeira, Paraná, Brasil- Câmpus Medianeira", "UTFPR, Medianeira, Paraná, Brasil")
+        .Replace("UTFPR - UTFPR", "UTFPR")
+        .Replace("UTFPR Campus Dois vizinhos", "UTFPR, Dois Vizinhos, Paraná, Brasil")
+        .Replace("UTFPR - Câmpus Curitiba", "UTFPR, Curitiba, Paraná, Brasil")
+        .Replace("UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ - LONDRINA", "UTFPR, Londrina, Paraná, Brasil")
+        .Replace("UTFPR - Câmpus Ponta Grossa", "UTFPR, Ponta Grossa, Paraná, Brasil")
+        .Replace("UTFPR-Ponta Grossa", "UTFPR, Ponta Grossa, Paraná, Brasil")
+        .Replace("UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ", "UTFPR")
+        .Replace("UTFPR, Cornélio Procópio, Paraná,Brasil", "UTFPR, Cornélio Procópio, Paraná, Brasil")
+        .Replace("Campus Curitiba", "UTFPR, Curitiba, Paraná, Brasil")
+        .Replace("UTFPR - Pato Branco", "UTFPR, Pato Branco, Paraná, Brasil")
+        .Replace("UTFPR, Apucarana", "UTFPR, Apucarana, Paraná, Brasil")
+        .Replace("UTFPR- Câmpus Dois Vizinhos", "UTFPR, Dois Vizinhos, Paraná, Brasil")
+        .Replace("UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ- MEDIANEIRA", "UTFPR, Medianeira, Paraná, Brasil")
+        .Replace("UTFPR GP", "UTFPR, Guarapuava, Paraná, Brasil")
+        .Replace("UTFPR - Campo Mourão", "UTFPR, Campo Mourão, Paraná")
+        .Replace("Universidade Estadual de Ponta Grossa", "UEPG, Ponta Grossa, Paraná")
+        .Replace("Faculdade de Pato Branco - FADEP", "FADEP, Pato Branco, Paraná")
+        .Replace("Colégio Estadual Mario de Andrade", "Colégio Estadual Mário de Andrade")
+        .Replace("UTFPR, Apucarana, Paraná, Paraná", "UTFPR, Apucarana, Paraná")
+        .Replace("UTFPR- MEDIANEIRA", "UTFPR, Medianeira, Paraná, Brasil")
+        .Replace("Universidade Federal de Santa Catarina - UFSC", "UFSC, Universidade Federal de Santa Catarina")
+        .Replace("Centro Estadual de Educação Profissional- Pedro Boaretto Neto", "Centro Estadual de Educação Profissional - Pedro Boaretto Neto")
+        .Replace("Centro Estadual de Educação Profissional do Sudoeste do Paraná,Francisco Beltrão, Paraná", "CEEP, Sudoeste do Paraná, Francisco Beltrão, Paraná")
+        .Replace("Centro Estadual de Educação Profissional do Sudoeste do Paraná, Francisco Beltrão, Paraná", "CEEP, Sudoeste do Paraná, Francisco Beltrão, Paraná")
+        .Replace(", Brasil", "").Trim();
+
+      return r;
     }
   }
 }

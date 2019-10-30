@@ -1,9 +1,6 @@
-using Application.Api.Queries;
-using Application.Api.ViewModels;
-using Domain.Domains.Article;
+﻿using Application.Api.Queries;
 using Domain.Interfaces;
 using Domains.Article;
-using Infra.Data.MongoIdentityStore;
 using MediatR;
 using MongoDB.Driver;
 using System.Collections.Generic;
@@ -25,6 +22,7 @@ namespace Application.Api.QueryHandlers
     {
       var modalities = _repository.Query<Article>()
         .Select(x => x.Modality)
+        .OrderBy(x => x)
         .Distinct();
 
       return Task.FromResult(modalities.ToList());

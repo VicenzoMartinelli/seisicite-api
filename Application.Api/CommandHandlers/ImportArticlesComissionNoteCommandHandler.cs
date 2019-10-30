@@ -1,14 +1,14 @@
+using Application.Api.Commands;
+using Domain.Interfaces;
+using Domains.Article;
+using MediatR;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.Api.Commands;
-using Domain.Interfaces;
-using Domains.Article;
-using MediatR;
-using MongoDB.Driver;
 
 namespace Application.Api.CommandHandlers
 {
@@ -40,9 +40,9 @@ namespace Application.Api.CommandHandlers
           {
             try
             {
-              var nota = Convert.ToDouble(item.Media.Replace(".", ","));
+              var nota = Convert.ToDouble(item.Media.Replace(",", "."));
 
-              article.CommissionNote = nota;
+              article.CommissionNote = request.Event == EEventIdentifier.Sei ? nota : nota * 2;
 
               await _repository.UpdateAsync(article, article.Id);
               await Task.Delay(500);
@@ -51,10 +51,8 @@ namespace Application.Api.CommandHandlers
             {
               Debug.WriteLine("sub: {0}, media: {1}", item.IdDaSubmissão, item.Media);
             }
-         
           }
         }
-        
       }
 
       return true;
