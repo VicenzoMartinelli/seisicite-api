@@ -1,5 +1,4 @@
 ﻿using Application.Api.Commands;
-using Application.Api.Queries;
 using Application.Api.ViewModels;
 using Domain.Core.Notifications;
 using Domains.Article;
@@ -7,7 +6,6 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
@@ -61,6 +59,28 @@ namespace Services.Seisicite.Api.Controllers
       var res = await _mediator.Send(new ImportArticlesComissionNoteCommand()
       {
         Notes = items,
+        Event = evvent
+      });
+
+      return res ? await ResponseOkAsync() : await ResponseNotificationsAsync();
+    }
+
+    [HttpPost("evaluators/{evvent}")]
+    public async Task<IActionResult> ImportEvaluators(
+            IFormFile file,
+            EEventIdentifier evvent)
+    {
+      List<ArticleEvaluatorsImport> items;
+
+      using (StreamReader r = new StreamReader(file.OpenReadStream()))
+      {
+        string json = r.ReadToEnd();
+        items = JsonConvert.DeserializeObject<List<ArticleEvaluatorsImport>>(json);
+      }
+
+      var res = await _mediator.Send(new ImportArticlesEvaluatorsCommand()
+      {
+        Articles = items,
         Event = evvent
       });
 

@@ -45,7 +45,7 @@ namespace Application.Api.CommandHandlers
               article.CommissionNote = request.Event == EEventIdentifier.Sei ? nota : nota * 2;
 
               await _repository.UpdateAsync(article, article.Id);
-              await Task.Delay(500);
+              await Task.Delay(100);
             }
             catch (Exception)
             {

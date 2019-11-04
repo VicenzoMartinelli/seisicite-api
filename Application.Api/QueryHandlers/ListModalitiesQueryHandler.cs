@@ -22,10 +22,9 @@ namespace Application.Api.QueryHandlers
     {
       var modalities = _repository.Query<Article>()
         .Select(x => x.Modality)
-        .OrderBy(x => x)
         .Distinct();
 
-      return Task.FromResult(modalities.ToList());
+      return Task.FromResult(modalities.ToList().OrderBy(x => x).ToList());
     }
   }
 }

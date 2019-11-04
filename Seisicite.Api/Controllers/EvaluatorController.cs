@@ -55,6 +55,20 @@ namespace Seisicite.Api.Controllers
       return await ResponseOkAsync(res);
     }
 
+    [HttpPut("update-event")]
+    [ClaimRequirement("Type", nameof(EUserType.Committee))]
+    public async Task<IActionResult> ApproveUser([FromBody] UpdateIsEventCommand command)
+    {
+      var result = await _mediator.Send(command);
+
+      if (!result)
+      {
+        return await ResponseNotificationsAsync();
+      }
+
+      return await ResponseOkAsync();
+    }
+
     [HttpPut("cancel")]
     [ClaimRequirement("Type", nameof(EUserType.Committee))]
     public async Task<IActionResult> CancelUsers([FromBody] IEnumerable<string> ids)

@@ -46,16 +46,11 @@ namespace Application.Api.QueryHandlers
           Evaluator1Name = _repository.Query<Person>().Where(x => x.Id == article.EvaluatorId).Select(x => x.Name).FirstOrDefault(),
           Evaluator2Average = article.FinalAverage2,
           Evaluator2Name = _repository.Query<Person>().Where(x => x.Id == article.Evaluator2Id).Select(x => x.Name).FirstOrDefault(),
-          FinalAverage = Math.Round((article.FinalAverage + article.FinalAverage2) / 2, 2)
+          FinalAverage = string.IsNullOrEmpty(article.Evaluator2Id) ? Math.Round((article.FinalAverage + article.CommissionNote) / 2, 2) : Math.Round((article.FinalAverage + article.FinalAverage2 + article.CommissionNote) / 3, 2)
         });
       }
 
       return rt.OrderByDescending(x => x.FinalAverage).ToList();
-    }
-
-    private static string GetName(IEnumerable<Person> authors)
-    {
-      return authors.FirstOrDefault()?.Name;
     }
   }
 }
