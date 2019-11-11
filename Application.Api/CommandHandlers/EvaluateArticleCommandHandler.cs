@@ -85,11 +85,11 @@ namespace Services.Seisicite.Api.CommandHandlers
     {
       if (time.Hour > 9)
       {
-        if (time.Hour < 16)
+        if (time.Hour < 18)
         {
           return 0;
         }
-        else if (time.Hour < 22)
+        else if (time.Hour < 24)
         {
           return 1;
         }
