@@ -86,5 +86,68 @@ namespace Services.Seisicite.Api.Controllers
 
       return res ? await ResponseOkAsync() : await ResponseNotificationsAsync();
     }
+
+    //[HttpGet("MEUDEUS")]
+    //[AllowAnonymous]
+    //public async Task<IActionResult> DADA([FromServices] IRepository repository)
+    //{
+    //  (await repository.GetAll<Article>()).ForEach(x =>
+    //  {
+    //    x.StartDate = x.StartDate.AddHours(3);
+
+    //    repository.SaveOrUpdateAsync(x, x.Id);
+    //  });
+
+    //  await repository.AddManyAsync(new List<Article>() {
+    //    new Article() {
+    //      ApresentationType = EApresentationType.Poster,
+    //      AssessmentStatus= EAssessmentStatus.Opened,
+    //      Room = "Sala X",
+    //      CommissionNote = 10,
+    //      Event = EEventIdentifier.Sei,
+    //      Language = "pt",
+    //      LocalDetails = "UTFPR",
+    //      Modality = "Física",
+    //      PrimaryAuthor = new Author()
+    //      {
+    //        Email = "joaodasneve@gmail.com",
+    //        FirstName = "Joao",
+    //        LastName = "Das Neve",
+    //        Institution = "UTFPR, Pato Branco, Paraná",
+    //        Country = "br"
+    //      },
+    //      SubmissionId = "-9998",
+    //      Title = "Artigo Teste SEI",
+    //      StartDate = DateTime.Now.AddDays(1).AddHours(-2)
+    //    }
+    //  });
+
+
+    //  await repository.AddManyAsync(new List<Article>() {
+    //    new Article() {
+    //      ApresentationType = EApresentationType.Poster,
+    //      AssessmentStatus= EAssessmentStatus.Opened,
+    //      Room = "Sala X",
+    //      CommissionNote = 10,
+    //      Event = EEventIdentifier.Sicite,
+    //      Language = "pt",
+    //      LocalDetails = "UTFPR",
+    //      Modality = "Física",
+    //      PrimaryAuthor = new Author()
+    //      {
+    //        Email = "joaodasneve@gmail.com",
+    //        FirstName = "Joao",
+    //        LastName = "Das Neve",
+    //        Institution = "UTFPR, Pato Branco, Paraná",
+    //        Country = "br"
+    //      },
+    //      SubmissionId = "-9999",
+    //      Title = "Artigo Teste SICITE",
+    //      StartDate = DateTime.Now.AddDays(1).AddHours(-2)
+    //    }
+    //  });
+
+    //  return Ok();
+    //}
   }
 }

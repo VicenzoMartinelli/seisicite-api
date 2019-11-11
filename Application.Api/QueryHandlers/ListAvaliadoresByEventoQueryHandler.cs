@@ -1,4 +1,4 @@
-using Application.Api.Queries;
+﻿using Application.Api.Queries;
 using Application.Api.ViewModels;
 using Domain.Domains.Article;
 using Domain.Interfaces;
@@ -44,7 +44,7 @@ namespace Application.Api.QueryHandlers
       {
         Id = x.Id,
         Name = x.Name
-      }).ToList();
+      }).OrderBy(x => x.Name).ToList();
     }
   }
 }

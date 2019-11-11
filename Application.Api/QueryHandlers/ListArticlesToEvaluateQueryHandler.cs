@@ -33,11 +33,14 @@ namespace Application.Api.QueryHandlers
       foreach (var art in articles)
       {
         var av1 = false;
-        var turnoAtual = GetTurno(DateTime.Now);
-        var turnoArtigo = GetTurno(art.StartDate);
+
+        var data = DateTime.Now;
+
+        var turnoAtual = GetTurno(data);
+
         var status = QueryToEvaluateType.ToEvaluate;
 
-        if (DateTime.Now.Date == art.StartDate.Date && turnoAtual != -1 && turnoAtual == turnoArtigo)
+        if (data.Date != art.StartDate.Date || turnoAtual == -1 || Math.Abs((art.StartDate - data).Hours) > 4)
         {
           if (art.EvaluatorId == request.EvaluatorId)
           {
@@ -99,7 +102,7 @@ namespace Application.Api.QueryHandlers
 
     private int GetTurno(DateTime time)
     {
-      if (time.Hour > 11)
+      if (time.Hour > 9)
       {
         if (time.Hour < 16)
         {

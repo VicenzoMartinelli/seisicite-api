@@ -31,11 +31,11 @@ namespace Application.Api.QueryHandlers
       {
         return false;
       }
+      var data = DateTime.Now;
 
-      var turnoAtual = GetTurno(DateTime.Now);
-      var turnoArtigo = GetTurno(article.StartDate);
+      var turnoAtual = GetTurno(data);
 
-      if (DateTime.Now.Date != article.StartDate.Date || turnoAtual == -1 || turnoAtual != turnoArtigo)
+      if (data.Date != article.StartDate.Date || turnoAtual == -1 || Math.Abs((article.StartDate - data).Hours) > 4)
       {
         _notificationContext.PushNotification(ReturnCode.NaoEhPossivelEditarAvaliacaoArtigo);
         return false;
@@ -46,7 +46,7 @@ namespace Application.Api.QueryHandlers
 
     private int GetTurno(DateTime time)
     {
-      if (time.Hour > 11)
+      if (time.Hour > 9)
       {
         if (time.Hour < 16)
         {
