@@ -40,7 +40,7 @@ namespace Application.Api.QueryHandlers
 
         var status = QueryToEvaluateType.ToEvaluate;
 
-        if (data.Date != art.StartDate.Date || turnoAtual == -1 || Math.Abs((art.StartDate - data).Hours) > 4)
+        if (Math.Abs((art.StartDate - data).Hours) < 4)
         {
           if (art.EvaluatorId == request.EvaluatorId)
           {

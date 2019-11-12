@@ -1,6 +1,7 @@
 ﻿using Application.Api.Commands;
 using Application.Api.ViewModels;
 using Domain.Core.Notifications;
+using Domain.Interfaces;
 using Domains.Article;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Services.Seisicite.Api.Controllers
@@ -87,67 +89,30 @@ namespace Services.Seisicite.Api.Controllers
       return res ? await ResponseOkAsync() : await ResponseNotificationsAsync();
     }
 
-    //[HttpGet("MEUDEUS")]
-    //[AllowAnonymous]
-    //public async Task<IActionResult> DADA([FromServices] IRepository repository)
-    //{
-    //  (await repository.GetAll<Article>()).ForEach(x =>
-    //  {
-    //    x.StartDate = x.StartDate.AddHours(3);
+    [HttpGet("MEUDEUS")]
+    [AllowAnonymous]
+    public async Task<IActionResult> DADA([FromServices] IRepository repository)
+    {
+      repository.Query<Article>().Where(x => x.NotaConhecimentoAssunto != 0).ToList().ForEach(x =>
+      {
+        if (x.FinalAverage > 0 || x.FinalAverage2 > 0)
+        {
+          if (x.FinalAverage > 0)
+          {
+            x.CalculateFinalAverage();
+          }
 
-    //    repository.SaveOrUpdateAsync(x, x.Id);
-    //  });
+          if (x.FinalAverage2 > 0)
+          {
+            x.CalculateFinalAverage2();
+          }
 
-    //  await repository.AddManyAsync(new List<Article>() {
-    //    new Article() {
-    //      ApresentationType = EApresentationType.Poster,
-    //      AssessmentStatus= EAssessmentStatus.Opened,
-    //      Room = "Sala X",
-    //      CommissionNote = 10,
-    //      Event = EEventIdentifier.Sei,
-    //      Language = "pt",
-    //      LocalDetails = "UTFPR",
-    //      Modality = "Física",
-    //      PrimaryAuthor = new Author()
-    //      {
-    //        Email = "joaodasneve@gmail.com",
-    //        FirstName = "Joao",
-    //        LastName = "Das Neve",
-    //        Institution = "UTFPR, Pato Branco, Paraná",
-    //        Country = "br"
-    //      },
-    //      SubmissionId = "-9998",
-    //      Title = "Artigo Teste SEI",
-    //      StartDate = DateTime.Now.AddDays(1).AddHours(-2)
-    //    }
-    //  });
+          repository.SaveOrUpdateAsync(x, x.Id);
+        }
 
+      });
 
-    //  await repository.AddManyAsync(new List<Article>() {
-    //    new Article() {
-    //      ApresentationType = EApresentationType.Poster,
-    //      AssessmentStatus= EAssessmentStatus.Opened,
-    //      Room = "Sala X",
-    //      CommissionNote = 10,
-    //      Event = EEventIdentifier.Sicite,
-    //      Language = "pt",
-    //      LocalDetails = "UTFPR",
-    //      Modality = "Física",
-    //      PrimaryAuthor = new Author()
-    //      {
-    //        Email = "joaodasneve@gmail.com",
-    //        FirstName = "Joao",
-    //        LastName = "Das Neve",
-    //        Institution = "UTFPR, Pato Branco, Paraná",
-    //        Country = "br"
-    //      },
-    //      SubmissionId = "-9999",
-    //      Title = "Artigo Teste SICITE",
-    //      StartDate = DateTime.Now.AddDays(1).AddHours(-2)
-    //    }
-    //  });
-
-    //  return Ok();
-    //}
+      return Ok();
+    }
   }
 }
